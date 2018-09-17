@@ -11,6 +11,10 @@ def process():
     #todo logic here
     return redirect("/thanks")
 
+@app.route('/favicon.ico')
+def icon():
+    return send_file("static/favicon.ico")
+
 @app.route('/thanks')
 def thanks():
     return send_file("static/thanks.html")
