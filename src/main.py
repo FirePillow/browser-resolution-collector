@@ -34,6 +34,11 @@ def index():
     return send_file("static/form.html")
 
 
+@app.errorhandler(500)
+def page_not_found(e):
+    return redirect("/500")
+
+
 @app.route('/api', methods=["POST"])
 def process():
     resolution = request.form.get("size")
