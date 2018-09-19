@@ -69,6 +69,13 @@ def statics(path):
     debug=True
 )'''
 
-http_server = HTTPServer(WSGIContainer(app))
-http_server.listen(5000)
-IOLoop.instance().start()
+def main():
+    try:
+        http_server = HTTPServer(WSGIContainer(app))
+        http_server.listen(5000)
+        IOLoop.instance().start()
+    except Exception:
+        main()
+        print("restart!")
+
+main()
