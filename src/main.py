@@ -37,19 +37,25 @@ def index():
 @app.route('/api', methods=["POST"])
 def process():
     resolution = request.form.get("size")
-    collect((resolution))
+    collect(resolution)
     # todo logic here
     return redirect("/thanks")
 
 
-@app.route('/favicon.ico')
-def icon():
-    return send_file("static/favicon.ico")
+@app.route('/404')
+def notfound():
+    return send_file("static/404.html")
 
 
-@app.route('/thanks')
-def thanks():
-    return send_file("static/thanks.html")
+@app.route('/<path:path>')
+def statics(path):
+    try:
+        return send_file("static/"+path)
+    except IOError:
+        try:
+            return send_file("static/"+path+".html")
+        except IOError:
+            return redirect("/404")
 
 
 #develop server
