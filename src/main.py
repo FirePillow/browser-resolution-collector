@@ -6,6 +6,10 @@ from tornado.ioloop import IOLoop
 
 import sqlite3
 
+connection = sqlite3.connect("data.db")
+cursor = connection.cursor()
+
+
 app = Flask(__name__)
 
 selquery = "SELECT size FROM data WHERE size = ?"
@@ -14,9 +18,7 @@ newquery = "INSERT INTO data VALUES (?,?)"
 
 
 def collect(resolution):
-    connection = sqlite3.connect("data.db")
-    cursor = connection.cursor()
-    c = cursor.execute(selquery,(resolution,))
+    c = cursor.execute(selquery, (resolution,))
     result = c.fetchall()
     if result == []:
         print "New stuff!!!"
