@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 	<title>A secret investigation</title>
 	<script type="text/javascript">
 	function collect(){
@@ -24,12 +25,53 @@
 		});
 	}
 	</script>
+	<style type="text/css">
+	html{
+		background-color: #f5f5f5;
+		}
+	.russo {
+    font-family: 'Russo One', sans-serif;
+    font-weight: lighter;
+	}
+	.harrington {
+    font-family: Harrington, monospace;
+	}
+	div{
+		text-align: center;
+		background-color:#FEDD55;
+		margin: 10% 10% 10% 10%;
+		padding: 20PX 10PX 20PX 10PX;
+		border-radius: 48px;
+		border: 3px solid #ffe505;
+	}
+	wz{
+	color: #000000;
+	letter-spacing: 0.04em;
+	font-size: 40px;
+	}
+	button{
+		margin: 20px auto auto;
+		margin-top: 20px;
+		width: 400px;
+		color: #6f6f6f;
+		background-color: #ffe505;
+		border-radius: 48px;
+		border: 3px solid #BD9801;
+		font-size: 35px;
+	}
+	.russo {
+    	font-family: 'Russo One', sans-serif;
+    	font-weight: lighter;
+	}
+	</style>
 </head>
 <body>
-	Hello, it's me, Mike.
+<div>
+	<span class="russo"><wz>Hello, it's me, Mike.<br>
 	Because of my CAS, I need to collect several data of your browser.<br>
 	I won't collect your private information, I will only collect the resolution in your browser.<br>
-	Click the following button to help me automatically collect the data.<br>
-	<button onclick="collect()" id="collect">the following button</button>
+		Click the following button to help me automatically collect the data.<br></wz></span>
+	<button onclick="collect()" id="collect"><span class="harrington">Click to follow!</span></button>
+</div>
 </body>
 </html>
