@@ -1,4 +1,7 @@
-from flask import *
+from flask import Flask
+from flask import send_file
+from flask import redirect
+from flask import request
 
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
